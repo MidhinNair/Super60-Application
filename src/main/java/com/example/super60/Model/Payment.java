@@ -1,0 +1,19 @@
+package com.example.super60.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+public class Payment extends BaseModel {
+    private String refNo;
+    private int amount;
+    @Enumerated(EnumType.STRING)
+    private PaymentProvider paymentProvider;
+    @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
+}
